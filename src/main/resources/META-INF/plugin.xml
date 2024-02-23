@@ -1,0 +1,50 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.garcia.ignacio.cleanarchgenerator</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>Clean Architecture File Structure Generator</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="ignaciogarcia198@gmail.com" url="https://www.yourcompany.com">Ignacio Garcia</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description><![CDATA[
+    Enter short description for your plugin here.<br>
+    <em>most HTML tags may be used</em>
+  ]]></description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+        <notificationGroup id="CleanArchitectureGenerator"
+                           displayType="BALLOON"/>
+
+    </extensions>
+    <actions>
+        <group class="com.garcia.ignacio.cleanarchgenerator.action.ActionGroup"
+               description="Choose a Clean Architecture variant"
+               id="com.garcia.ignacio.cleanarchgenerator"
+               popup="true"
+               text="Clean Arch Structure Generator">
+            <add-to-group anchor="after"
+                          group-id="NewGroup" relative-to-action="NewDir" />
+            <action class="com.garcia.ignacio.cleanarchgenerator.action.ActionGenerateCleanArchFlutter"
+                    description="Generate a new clean architecture folder structure for Flutter"
+                    id="com.garcia.ignacio.cleanarchgenerator.action.ActionGenerateCleanArchFlutter"
+                    text="Generate Flutter Clean Arch Tree"/>
+            <action class="com.garcia.ignacio.cleanarchgenerator.action.ActionGenerateBloc"
+                    description="Generate a new Flutter Bloc"
+                    id="com.garcia.ignacio.cleanarchgenerator.action.ActionGenerateBloc"
+                    text="Generate Flutter Bloc"/>
+        </group>
+    </actions>
+</idea-plugin>
