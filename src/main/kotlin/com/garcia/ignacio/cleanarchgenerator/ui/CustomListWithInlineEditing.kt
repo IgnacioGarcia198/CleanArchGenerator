@@ -45,7 +45,7 @@ class CustomListWithInlineEditing : JPanel() {
 
         // Create a scroll pane for the table
         val scrollPane = JScrollPane(table)
-        scrollPane.preferredSize = Dimension(200, 150)
+        scrollPane.preferredSize = Dimension(200, 70)
         add(scrollPane, BorderLayout.CENTER)
         addButton = JButton("+")
         addButton.preferredSize = Dimension(20, 15)
