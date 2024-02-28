@@ -14,7 +14,56 @@
          Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
     <description><![CDATA[
-    Clear architecture file structure generator.
+    <p>This plugin generates a folder tree for flutter_bloc clean architecture.</p>
+
+    <p>Generating all the layers involved in the clean architecture can be cumbersome, specially when working with flutter_bloc.
+    <br> That is where this plugin comes in.</p>
+
+
+    <p>The plugin has 2 options.<br>
+    First option is located at <b>File -> New -> Clean Arch Structure Geneator -> Generate Flutter Clean Arch Tree</b>.
+    <br>This option generates the folder structure with Repository and Use Cases files.
+    <br>In the dialog you can change the feature name, and the Repository and Repository Implementation class names will automatically change.
+    <br>You can also add and remove use case classes to be generated.
+    <br>This is an example of a file tree created using this option:</p>
+
+    <pre>
+    auth (feature name)
+    ├── data
+    │   ├── data_sources
+    │   ├── models
+    │   └── repositories
+    │       └── auth_repository_impl.dart
+    ├── domain
+    │   ├── entities
+    │   ├── repositories
+    │   │   └── auth_repository.dart
+    │   └── use_cases
+    │       ├── use_case_name.dart
+    └── presentation
+        ├── bloc
+        ├── pages
+        └── widgets
+    </pre>
+
+    <p>Second option complements the first one, is located at <b>File -> New -> Clean Arch Structure Geneator -> Generate Flutter Bloc</b>.
+    <br>It generates the structure for a Bloc with Bloc, Event and State files.
+    <br>In the dialog you can change the bloc name, and the state and event class names will automatically change.
+    <br>You can also add and remove states and events that will be generated inside the state and event files respectively.
+    <br>Thre is also an option to create a new folder to hold these bloc files, as you may have several blocs per feature.
+    <br>This is an example of a bloc file set using this option:</p>
+
+    <pre>
+    auth/presentation/bloc/auth
+    ├── auth_bloc.dart
+    ├── auth_event.dart
+    └── auth_state.dart
+    </pre>
+
+
+    Credits: To <a href="https://plugins.jetbrains.com/vendor/cff244a4-3511-4dc1-9394-276cfa9f1fb7">Arne Rantzen</a>.
+    <br>This plugin was inspired in his <a href="https://plugins.jetbrains.com/plugin/13470-clean-architecture-for-flutter">Clean Architecture for Flutter</a>.
+
   ]]></description>
 
     <!-- Product and plugin compatibility requirements.
